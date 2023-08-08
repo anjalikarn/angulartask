@@ -1,0 +1,24 @@
+<p-table [value]="categories" [tableStyle]="{'min-width': '60rem'}">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between table-header">
+            Categories
+            <p-button class="atom-action" label="Add Category" (click)="addCategoryHandler()"></p-button>
+            <p-button label="Go to Products" styleClass="p-button-raised p-button-text atom-action" (click)="goToProductsHandler()"></p-button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-category>
+        <tr>
+            <td>{{category.name}}</td>
+            <td><p-button class="atom-action" label="Edit" (click)="categorySelectHandler(category)"></p-button>
+                <button type="button" pButton pRipple (click)="categoryDeleteHandler(category)" label="Delete" class="p-button-danger atom-action"></button>
+            </td>
+        </tr>
+    </ng-template>
+
+</p-table>

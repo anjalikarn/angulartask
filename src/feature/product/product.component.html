@@ -1,0 +1,20 @@
+<p-panel header="Add/Edit" [formGroup]="formGroup">
+    <div class="card flex justify-content-center atom-panel">
+        <div class="p-float-label atom-field">
+            <input pInputText id="name" formControlName="name" />
+            <label htmlFor="name">Name</label>
+        </div>
+        <div class="p-float-label atom-field">
+            <p-inputNumber class="input-number" pInputText id="price" formControlName="price"></p-inputNumber>
+            <label htmlFor="price">Price</label>
+        </div>
+        <div class="p-float-label atom-field">
+            <p-dropdown id="category" [options]="categories" formControlName  ="categoryId" optionLabel="name"></p-dropdown>
+            <label htmlFor="category">Category</label>
+        </div>
+
+        <p-button class="submit" label="Save" (click)="submitClickHandler()" [disabled]="!formGroup.dirty"></p-button>
+
+    </div>
+    <p-toast position="bottom-center"></p-toast>
+</p-panel>

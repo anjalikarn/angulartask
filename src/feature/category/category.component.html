@@ -1,0 +1,12 @@
+<p-panel header="Add" [formGroup]="catformGroup">
+    <div class="card flex justify-content-center atom-panel">
+        <div class="p-float-label atom-field">
+            <input pInputText id="name" formControlName="name" />
+            <label htmlFor="name">Name</label>
+        </div>
+
+        <p-button class="submit" label="Add" (click)="addCat()" [disabled]="!catformGroup.dirty"></p-button>
+
+    </div>
+    <p-toast position="bottom-center"></p-toast>
+</p-panel>
